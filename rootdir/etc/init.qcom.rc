@@ -333,7 +333,9 @@ on boot
     chown system system /sys/class/sensors/apds9930-proximity/poll_delay
 
     # Create directory used for display
+    # for backward compatibility
     mkdir /persist/display 0770 system graphics
+    mkdir /mnt/vendor/persist/display 0770 system graphics
 
     # Permissions for HDMI out over greybus
     chown system graphics /sys/class/graphics/fb2/res_info
