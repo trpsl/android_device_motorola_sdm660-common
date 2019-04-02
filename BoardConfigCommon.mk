@@ -147,6 +147,9 @@ TARGET_USES_COLOR_METADATA := true
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
+VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
+
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
     ifneq ($(TARGET_BUILD_VARIANT),eng)
