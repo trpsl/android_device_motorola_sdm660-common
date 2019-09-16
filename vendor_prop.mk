@@ -49,6 +49,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     use.dedicated.device.for.voip=true \
     vendor.audio.feature.compr_voip.enable=true
 
+# Adoptable Storage (Prevents SDCARD Double Encryption)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.allow_encrypt_override=true \
+    ro.crypto.volume.filenames_mode=aes-256-cts
+
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     bt.max.hfpclient.connections=1 \
