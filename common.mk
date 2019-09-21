@@ -126,14 +126,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1
 
-# GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl-qti \
-    android.hardware.gnss@1.0-service-qti \
-    libgnss \
-    libgnsspps \
-    libvehiclenetwork-native
-
 PRODUCT_PACKAGES += \
     apdr.conf \
     flp.conf \
