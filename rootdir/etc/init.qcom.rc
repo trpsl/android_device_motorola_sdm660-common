@@ -45,6 +45,10 @@ on init
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
+    # Mix device-specific information into the entropy pool
+    copy /proc/cmdline /dev/urandom
+    copy /default.prop /dev/urandom
+
     # Change ownership for for HBM feature
     chown system system /sys/class/graphics/fb0/hbm
     # Change ownership for for ACL feature
@@ -205,6 +209,7 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/sns_reg_config
     chown system system /mnt/vendor/persist/sensors/registry/config
     chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
+    chown root radio /proc/cmdline
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
