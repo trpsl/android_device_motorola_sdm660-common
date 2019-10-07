@@ -212,7 +212,7 @@ TARGET_RIL_VARIANT := caf
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_USES_OLD_MNC_FORMAT := true
 
-CUSTOM_APNS_FILE := $(PLATFORM_PATH)/configs/sprint_apns.xml
+CUSTOM_APNS_FILE := $(PLATFORM_PATH)/configs/custom-apns.xml
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := persist
