@@ -46,7 +46,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.use.sw.ape.decoder=true \
     vendor.voice.path.for.pcm.voip=false \
     vendor.audio.offload.min.duration.secs=60 \
-    use.dedicated.device.for.voip=true
+    use.dedicated.device.for.voip=true \
+    vendor.audio.feature.compr_voip.enable=true
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
