@@ -22,9 +22,9 @@
 # definition file).
 #
 
-PLATFORM_PATH := device/motorola/sdm660-common
+COMMON_PATH := device/motorola/sdm660-common
 
-TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 BOARD_VENDOR := motorola
 
@@ -158,16 +158,16 @@ endif
 USE_DEVICE_SPECIFIC_GPS := true
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 ifdef BOARD_USES_KEYMASTER_4
-    DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/keymaster_4.xml
+    DEVICE_MANIFEST_FILE += $(COMMON_PATH)/keymaster_4.xml
 else
-    DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/keymaster_3.xml
+    DEVICE_MANIFEST_FILE += $(COMMON_PATH)/keymaster_3.xml
 endif
-DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 TARGET_FS_CONFIG_GEN += \
-    $(PLATFORM_PATH)/config.fs \
-    $(PLATFORM_PATH)/mot_aids.fs
+    $(COMMON_PATH)/config.fs \
+    $(COMMON_PATH)/mot_aids.fs
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3
@@ -212,7 +212,7 @@ TARGET_RIL_VARIANT := caf
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_USES_OLD_MNC_FORMAT := true
 
-CUSTOM_APNS_FILE := $(PLATFORM_PATH)/configs/sprint_apns.xml
+CUSTOM_APNS_FILE := $(COMMON_PATH)/configs/sprint_apns.xml
 
 # Root
 BOARD_ROOT_EXTRA_SYMLINKS := \
@@ -223,9 +223,9 @@ VENDOR_SECURITY_PATCH := 2019-10-05
 
 # SELinux
 # include device/qcom/sepolicy/sepolicy.mk
-# BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
-# BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy_base
+# BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+# BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
+BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy_base
 
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
