@@ -56,6 +56,26 @@ if [ -z "${SRC}" ]; then
     SRC=adb
 fi
 
+function blob_fixup() {
+    case "${1}" in
+
+    # Load wrapped shim
+    vendor/lib64/libmdmcutback.so)
+        sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "${2}"
+        ;;
+
+    # Fix xml version
+    product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml)
+        sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
+        ;;
+
+    product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
+        sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
+        ;;
+
+    esac
+}
+
 # Initialize the helper
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true "${CLEAN_VENDOR}"
 
@@ -67,14 +87,5 @@ if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
 
     extract "${MY_DIR}/../${DEVICE}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 fi
-
-COMMON_BLOB_ROOT="${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE_COMMON}/proprietary"
-
-# Load wrapped shim
-MDMCUTBACK="$COMMON_BLOB_ROOT"/vendor/lib64/libmdmcutback.so
-sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK"
-
-sed -i 's/xml version="2.0"/xml version="1.0"/' "$COMMON_BLOB_ROOT"/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
-sed -i 's/xml version="2.0"/xml version="1.0"/' "$COMMON_BLOB_ROOT"/product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml
 
 "${MY_DIR}/setup-makefiles.sh"
