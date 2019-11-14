@@ -76,7 +76,10 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0 \
-    libbt-vendor
+    android.hardware.bluetooth.audio@2.0-impl \
+    audio.bluetooth.default \
+    libbt-vendor \
+    libbthost_if
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
