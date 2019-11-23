@@ -165,6 +165,7 @@ PRODUCT_PACKAGES += \
 
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
+WITH_GMS_FI := true
 
 # Health
 PRODUCT_PACKAGES += \
