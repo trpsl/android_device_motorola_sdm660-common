@@ -27,6 +27,9 @@ $(call inherit-product, vendor/motorola/sdm660-common/sdm660-common-vendor.mk)
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
+# GCam mod
+$(call inherit-product-if-exists, packages/apps/GoogleCamera/gcam.mk)
+
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
@@ -90,8 +93,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     camera.device@3.2-impl \
     libbson.vendor \
-    libxml2 \
-    Snap
+    libxml2
 
 # Charger Images
 PRODUCT_PACKAGES += charger_res_images
