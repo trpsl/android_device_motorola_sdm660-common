@@ -228,6 +228,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config.extra=none
 
+# WFD
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.hwc.enable_vds=1 \
+    persist.sys.wfd.virtual=0
+
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
