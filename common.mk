@@ -227,9 +227,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.sdm660
 
-# MotoActions
+# LineageActions
 PRODUCT_PACKAGES += \
-    MotoActions
+    LineageActions
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
