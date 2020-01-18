@@ -210,6 +210,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.iwlan_mux=9 \
     persist.data.df.dev_name=rmnet_usb0 \
     persist.data.iwlan.enable=true \
+    persist.vendor.data.iwlan.enable=true \
     persist.rmnet.data.enable=true \
     persist.rmnet.mux=enabled
 
