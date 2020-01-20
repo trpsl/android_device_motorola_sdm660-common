@@ -228,6 +228,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.delta_time.enable=true
 
+# UI
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.use_fifo_ui=1
+
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config.extra=none
