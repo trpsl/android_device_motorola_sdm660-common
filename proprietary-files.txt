@@ -316,9 +316,9 @@ vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
-# Graphics - Vulkan - from Mata - QP1A.190711.122
-vendor/lib/hw/vulkan.sdm660.so|102dc4ee268de6db66dc3ec61200aeeeb85e55c3
-vendor/lib64/hw/vulkan.sdm660.so|f4d7d5825d6e564943cf0d18c1fe78ab86a2797a
+# Graphics - Vulkan - from LA.UM.8.2.r1-04300-sdm660.0
+vendor/lib/hw/vulkan.sdm660.so|8cc3a97b8dc766fff56fe481a2cbc4ffb2554cbd
+vendor/lib64/hw/vulkan.sdm660.so|7e169404af966912875e78968e58cfc4b1f6cd1c
 
 # Graphics - HDR
 vendor/lib/libhdr_tm.so
